@@ -4,7 +4,7 @@ const http=require("http")
 const server = http.createServer(app);
 const PORT =3000;// Middleware
 app.use(express.json());// Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/tej', {
+mongoose.connect(process.env.MONGO_URL, {
 useNewUrlParser: true,useUnifiedTopology: true}).
 then(() => console.log('Connected to MongoDB')).
 catch(err => console.error('Error connecting to MongoDB:', err));// Routes
